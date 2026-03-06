@@ -1,0 +1,34 @@
+# ...existing code...
+
+# ask for total monthly budget
+while True:
+    try:
+        budget = float(input("Enter your total monthly budget: "))
+        break
+    except ValueError:
+        print("Please enter a numeric value.")
+
+# ask for expenses until user types done
+expenses = []
+while True:
+    entry = input("Enter an expense (or type done to finish): ").strip()
+    if entry.lower() == 'done':
+        break
+    try:
+        exp = float(entry)
+        expenses.append(exp)
+    except ValueError:
+        print("Please enter a numeric value or 'done'.")
+
+# subtract expenses from the budget
+remaining = budget - sum(expenses)
+
+# display remaining balance
+print("\n" + "-" * 30)
+print(f"Total budget : {budget:.2f}")
+for i, exp in enumerate(expenses, start=1):
+    print(f"Expense {i}   : {exp:.2f}")
+print(f"Remaining    : {remaining:.2f}")
+if remaining < 500:
+    print("Warning: Low Funds")
+print("-" * 30)
