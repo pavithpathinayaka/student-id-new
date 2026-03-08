@@ -32,3 +32,5 @@ print(f"Remaining    : {remaining:.2f}")
 if remaining < 500:
     print("Warning: Low Funds")
 print("-" * 30)
+print("-" * 30)
+print("-" * 30)
